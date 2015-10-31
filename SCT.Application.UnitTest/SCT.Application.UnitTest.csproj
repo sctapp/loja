@@ -42,6 +42,7 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
@@ -87,10 +88,6 @@
     <ProjectReference Include="..\SCT.Application.Web\SCT.Application.Web.csproj">
       <Project>{a8c52125-7919-4049-a6b5-df13a3f13111}</Project>
       <Name>SCT.Application.Web</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SCT.Entity\SCT.Application.Dominio.csproj">
-      <Project>{34fefe6d-ecb8-46a8-b04c-073b17b66d0d}</Project>
-      <Name>SCT.Application.Dominio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
