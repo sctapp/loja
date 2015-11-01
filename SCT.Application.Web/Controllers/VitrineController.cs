@@ -1,4 +1,5 @@
-﻿using SCT.Entity.Repositorio;
+﻿using SCT.Application.Web.Models;
+using SCT.Entity.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,30 @@ namespace SCT.Application.Web.Controllers
     public class VitrineController : Controller
     {
         private ProdutosRepositorio _repositorio;
-        public int ProdutoPorPagina = 3;
+        public int ProdutoPorPagina = 8;
+
         //
         // GET: /Vitrine/
-        public ActionResult ListProdutos(int pagina = 1)
+        public ViewResult ListProdutos(int pagina = 1)
         {
             _repositorio = new ProdutosRepositorio();
-            var produtos = _repositorio.Produtos
+
+            ProdutoViewModel model = new ProdutoViewModel
+            {
+                Produtos = _repositorio.Produtos
                     .OrderBy(p => p.Nome)
                     .Skip((pagina - 1) * ProdutoPorPagina)
-                    .Take(ProdutoPorPagina);
+                    .Take(ProdutoPorPagina),
 
-            return View(produtos);
+                Paginacao = new Paginacao
+                {
+                    PaginaAtual = pagina,
+                    ItensPorPagina = ProdutoPorPagina,
+                    ItensTotal = _repositorio.Produtos.Count()
+                }
+            };
+
+            return View(model);
         }
     }
 }

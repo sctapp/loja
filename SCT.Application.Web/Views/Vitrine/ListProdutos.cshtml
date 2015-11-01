@@ -1,0 +1,14 @@
+﻿@using SCT.Application.Web.HtmlHelpers
+
+@model SCT.Application.Web.Models.ProdutoViewModel
+
+@foreach (var p in Model.Produtos)
+{
+    <div>
+        <h3>@p.Nome</h3>
+        @p.Descricao
+        <h4>@p.Preco.ToString("c")</h4>
+    </div>
+}
+
+@Html.PageLinks(Model.Paginacao, x => Url.Action("ListProdutos", new { pagina = x }))
