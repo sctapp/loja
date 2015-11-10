@@ -83,11 +83,16 @@
   <ItemGroup>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TesteCarrinhoCompras.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SCT.Application.Web\SCT.Application.Web.csproj">
       <Project>{a8c52125-7919-4049-a6b5-df13a3f13111}</Project>
       <Name>SCT.Application.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCT.Entity\SCT.Application.Dominio.csproj">
+      <Project>{34fefe6d-ecb8-46a8-b04c-073b17b66d0d}</Project>
+      <Name>SCT.Application.Dominio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

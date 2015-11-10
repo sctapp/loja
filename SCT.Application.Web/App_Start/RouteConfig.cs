@@ -47,7 +47,7 @@ namespace SCT.Application.Web
 
             //4
             routes.MapRoute(null,
-                "{categoria}Pagina{pagina}",
+                "{categoria}/Pagina{pagina}",
                 new
                 {
                     controller = "Vitrine",
