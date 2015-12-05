@@ -1,4 +1,5 @@
-﻿using SCT.Entity.Entidades;
+﻿using SCT.Application.Web.Models;
+using SCT.Entity.Entidades;
 using SCT.Entity.Repositorio;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,15 @@ namespace SCT.Application.Web.Controllers
             }
 
             return RedirectToAction("Index", new { returnUrl });
+        }
+
+        public ViewResult Index(string returnUrl)
+        {
+            return View(new CarrinhoViewModel
+            {
+                Carrinho = ObterCarrinho(),
+                ReturnUrl = returnUrl
+            });
         }
     }
 }
