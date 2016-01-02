@@ -1,9 +1,5 @@
 ﻿@model SCT.Application.Web.Models.CarrinhoViewModel
 
-@
-{
-ViewBag.Title = "SCT: Seu Carrinho"
-}
 
 <style>
     #carrinhoTable {
@@ -16,14 +12,14 @@ ViewBag.Title = "SCT: Seu Carrinho"
 <table id="carrinhoTable" class="table">
     <thead>
         <tr>
-            <th>Quantidade</th>
-            <th>Produto</th>
+            <th class="text-center">Quantidade</th>
+            <th class="text-center">Produto</th>
             <th class="text-right">Preço</th>
             <th class="text-right">SubTotal</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var item in Model.Carrinho.ItensCarrinho)
+        @foreach (var item in Model.Carrinho.ItensCarrinho)
         {
             <tr>
                 <td class="text-center">@item.Quantidade</td>
@@ -57,6 +53,5 @@ ViewBag.Title = "SCT: Seu Carrinho"
         Continuar Comprando
     </a>
 
-    @Html.ActionLink("Fechar o pedido", "FecharPedido", "Carrinho", new {@class = "btn btn-primary"})
+    @Html.ActionLink("Fechar o pedido", "FecharPedido", "Carrinho", new { @class = "btn btn-primary" })
 </div>
-
